@@ -5,3 +5,9 @@ draft: false
 ---
 
 Page about me.
+
+
+
+# Stroke
+
+I'm _lucky_ enough to name myself an stroke survivor.
