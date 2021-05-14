@@ -1,12 +1,16 @@
 ---
 title: "101: Dell 7567 i podejścia do grafiki pod Linuxem"
 date: 2021-05-09T19:57:38+02:00
-draft: true
+draft: false
 toc: true
 tags: ["dell", "linux","GPU", "fish"]
 ---
 
 Ze względu na to ,że ostatnio coraz częściej grzebię przy ustawieniach karty graficznej czuję potrzebę podsumowania swoich doświadczeń.
+
+<!--more--> 
+
+
 
 **Ostrzeżenie.** Mimo mylącego tytułu ten post będzie raczej zbiorem luźnych wniosków i podpowiedzi co powinno być w plikach, aniżeli poprowadzeniem  za rękę.
 
