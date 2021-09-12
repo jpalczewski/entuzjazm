@@ -27,13 +27,13 @@ other = "Copy"
 other = "Copied!"
 
 [copyrightAuthor]
-other = "Author"
+other = "Autor"
 
 [copyrightLink]
 other = "Link"
 
 [copyrightLicense]
-other = "License"
+other = "Licencja"
 
 [shareOn]
 other = "Share on:"
@@ -104,10 +104,10 @@ other = "QR Code"
 # Used for `i18nMonth`
 
 [january]
-other = "January"
+other = "Styczeń"
 
 [february]
-other = "February"
+other = "Luty"
 
 [march]
 other = "March"
@@ -116,28 +116,28 @@ other = "March"
 other = "April"
 
 [may]
-other = "May"
+other = "Maj"
 
 [june]
-other = "June"
+other = "Czerwiec"
 
 [july]
-other = "July"
+other = "Lipec"
 
 [august]
-other = "August"
+other = "Sierpień"
 
 [september]
-other = "September"
+other = "Wrzesień"
 
 [october]
-other = "October"
+other = "Październik"
 
 [november]
-other = "November"
+other = "Listopad"
 
 [december]
-other = "December"
+other = "Grudzień"
 
 
 # Numbers
