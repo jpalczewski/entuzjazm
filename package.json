@@ -1,0 +1,27 @@
+{
+  "name": "entuzjazm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "jpalczewski",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/ts-plugin": "^1.1.1",
+    "astro": "^2.10.3"
+  },
+  "search.exclude": {
+    "pnpm-lock.yaml": true
+  },
+  "eslint.packageManager": "pnpm",
+  "npm.packageManager": "pnpm",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
