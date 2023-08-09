@@ -11,12 +11,17 @@
   },
   "keywords": [],
   "author": "jpalczewski",
+  "type": "module",
   "license": "ISC",
   "dependencies": {
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/sitemap": "^2.0.1",
+    "@astrojs/svelte": "^3.1.0",
+    "@astrojs/tailwind": "^4.0.0",
     "@astrojs/ts-plugin": "^1.1.1",
-    "astro": "^2.10.3"
+    "astro": "^2.10.3",
+    "svelte": "^4.0.0",
+    "tailwindcss": "^3.0.24"
   },
   "search.exclude": {
     "pnpm-lock.yaml": true

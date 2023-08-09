@@ -1,0 +1,40 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { getLangFromUrl } from "src/i18n/utils";
+export async function getStaticPaths() {
+  const insights = await getCollection("insight");
+  return Array.from(
+    new Set(insights.flatMap((post) => post.data.language)),
+  ).map((lang) => {
+    const uniqueTags = Array.from(
+      new Set(
+        insights
+          .filter((post) => post.data.language === lang)
+          .flatMap((post) => post.data.tags || []),
+      ),
+    );
+    return {
+      params: { lang },
+      props: { tags: uniqueTags },
+    };
+  });
+}
+
+const { tags } = Astro.props;
+console.log(tags);
+const pageTitle = "Tag Index";
+const lang = getLangFromUrl(Astro.url);
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div>
+    {
+      tags.map((tag: string) => (
+        <p>
+          <a href={`/${lang}/insight/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
+  </div>
+</BaseLayout>
