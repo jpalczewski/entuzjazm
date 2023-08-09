@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const insights = await getCollection("insight");
+  const ret = insights.flatMap((post) => {
+    const lang = post.data.language;
+    const uniqueTags = Array.from(new Set(post.data.tags || []));
+
+    return uniqueTags.map((tag) => {
+      const filteredPosts = insights.filter(
+        (p) => p.data.language === lang && p.data.tags?.includes(tag),
+      );
+
+      return {
+        params: { tag: tag, lang: lang },
+        props: { posts: filteredPosts },
+      };
+    });
+  });
+
+  return ret;
+}
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+console.log(posts);
+---
+
+<BaseLayout>
+  Insights tagged with {tag}:
+</BaseLayout>
