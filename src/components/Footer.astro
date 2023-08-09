@@ -1,8 +1,12 @@
 ---
+import LanguagePicker from "./LanguagePicker.astro";
 const platform = "github";
 const username = "withastro";
 ---
 
-<footer>
-  <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
+<footer class="footer  p-4 bg-neutral text-neutral-content justify-items-end">
+  <div class="px-5">
+    <LanguagePicker />
+  </div>
+
 </footer>

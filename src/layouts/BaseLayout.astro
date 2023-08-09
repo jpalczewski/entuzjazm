@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { getLangFromUrl } from '../i18n/utils';
 import Navigation from '@components/Navigation.astro';
 import LanguagePicker from '@components/LanguagePicker.astro';
+import Footer from '@components/Footer.astro';
 const {pageTitle} = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -17,8 +18,6 @@ const lang = getLangFromUrl(Astro.url);
   <body>
     <Navigation />
     <slot />
-    <footer>
-      <LanguagePicker />
-    </footer>
+    <Footer />
   </body>
 </html>

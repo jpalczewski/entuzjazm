@@ -1,23 +1,23 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import '../styles/global.css'
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang)
+const t = useTranslations(lang);
 ---
-<ul>
-    <li>
-        <a href={`/${lang}/home/`}>
-          {t('nav.home')}
-        </a>
-    </li>
-    <li>
-        <a href={`/${lang}/insight/`}>
-          {t('nav.about')}
-        </a>
-    </li>
-    <li>
-        <a href="https://twitter.com/astrodotbuild">
-          {t('nav.twitter')}
-        </a>
-    </li>
-</ul>
+<nav class="navbar bg-base-100">
+  <div class="flex-1">
+    <a class="btn btn-ghost normal-case text-xl">jpalczewski blog</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li class="tooltip tooltip-left" data-tip="Short, random posts.">
+          <a href={`/${lang}/insight/`} >
+            {t('nav.insight')}
+          </a>
+      </li>
+    </ul>
+</div>
+</nav>
+
+
