@@ -1,6 +1,7 @@
 ---
 title: 'The greatest post of all time PL'
-author: 'Ben'
+language: pl
+slug: czesc
 ---
 
 Here is my _great_ post!

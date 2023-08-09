@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getLangFromUrl } from "src/i18n/utils";
+const pageTitle = 'Short';
+
+import { getCollection } from 'astro:content';
+const lang = getLangFromUrl(Astro.url);
+const blogEntries = await getCollection('short', ({data}) => { return data.language == lang});
+console.log(blogEntries);
+export function getStaticPaths() {
+  return [
+    {params: {lang: 'pl'}},
+    {params: {lang: 'en'}},
+  ];
+}
+---
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    {blogEntries.map(blogPostEntry => (
+      <li>
+        <a href={`/${lang}/short/${blogPostEntry.slug}`}>{blogPostEntry.data.title}</a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

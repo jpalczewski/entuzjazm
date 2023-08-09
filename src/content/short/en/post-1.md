@@ -1,6 +1,7 @@
 ---
 title: 'The greatest post of all time EN'
-author: 'Ben'
+language: en
+slug: hej
 ---
 
 Here is my _great_ post!
