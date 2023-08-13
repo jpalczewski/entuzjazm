@@ -8,3 +8,15 @@ tags:
 ---
 
 Here is my _great_ post!
+
+```js
+
+<BaseLayout>
+  Insights tagged with {tag}:
+  {
+    posts.map(post => ( 
+      <InsightCard insight={post} lang={lang} />
+    ))
+  }
+</BaseLayout>
+```
