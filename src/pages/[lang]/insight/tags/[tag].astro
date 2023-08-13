@@ -37,7 +37,7 @@ const lang = getLangFromUrl(Astro.url);
 <BaseLayout>
   Insights tagged with {tag}:
   {
-    posts.map(post => ( 
+    posts?.map(post => ( 
       <InsightCard insight={post} lang={lang} />
     ))
   }

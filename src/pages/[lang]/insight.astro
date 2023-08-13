@@ -16,7 +16,12 @@ export function getStaticPaths() {
 ---
 <BaseLayout pageTitle={pageTitle}>
 
-    {blogEntries.map(blogPostEntry => (
+    {blogEntries.sort((a,b) => {
+        const dateA =  parseInt(a.data.date)
+        const dateB = parseInt(b.data.date)
+        return dateB - dateA;
+      } )
+    .map(blogPostEntry => (
        <InsightCard insight={blogPostEntry} lang={lang} />
 
     ))}
