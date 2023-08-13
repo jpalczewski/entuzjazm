@@ -1,7 +1,7 @@
 ---
-title: "The greatest post of all time EN"
+title: "Hello, astro!"
 language: en
-date: 2023-08-07
+date: "2020-01-01T00:00:00Z"
 ---
 
-Here is my _great_ post!
+New blogging engine, new beginning. Isn't it?

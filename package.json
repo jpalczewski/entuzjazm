@@ -29,6 +29,7 @@
   "eslint.packageManager": "pnpm",
   "npm.packageManager": "pnpm",
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "daisyui": "^3.5.1",

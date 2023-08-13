@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getLangFromUrl } from "src/i18n/utils";
-import createSlug from "../../lib/createSlug";
-const pageTitle = 'Short';
+const pageTitle = 'Insights';
 
 import { getCollection } from 'astro:content';
+import InsightCard from "@components/InsightCard.astro";
 const lang = getLangFromUrl(Astro.url);
 const blogEntries = await getCollection('insight', ({data}) => { return data.language == lang});
 export function getStaticPaths() {
@@ -15,11 +15,10 @@ export function getStaticPaths() {
 }
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <ul>
+
     {blogEntries.map(blogPostEntry => (
-      <li>
-        <a href={`/${lang}/insight/${createSlug( blogPostEntry.data.title)}`}>{blogPostEntry.data.title}</a>
-      </li>
+       <InsightCard insight={blogPostEntry} lang={lang} />
+
     ))}
-  </ul>
+
 </BaseLayout>

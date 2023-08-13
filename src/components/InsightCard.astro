@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import createSlug from 'src/lib/createSlug';
+import TagList from './TagList.astro';
+interface Props {
+  insight: CollectionEntry<'insight'>;
+  lang: string; 
+}
+const { insight , lang} = Astro.props;
+const { Content } = await insight.render();
+const dateLang = lang === "en"? "en-GB": lang;
+const date = new Date(insight.data.date);
+---
+<article class="bg-secondary container px-4 mb-4 prose mx-auto w-full">
+  <header class="mb-4 lg:mb-6">
+    <h1 class="mb-0 pb-0">
+      <a class="no-underline" href={`/${lang}/insight/${createSlug( insight.data.title)}`}>{insight.data.title}</a>
+    </h1>
+    <p class="mt-0 italic mb-0 pb-0">
+    Published: <time datetime={date.toISOString()}>
+      {date.toLocaleTimeString(dateLang)} {date.toLocaleDateString(dateLang)}
+    </time>
+   </p>
+    <TagList tags={insight.data.tags} />
+  </header>
+
+  <Content />
+</article>

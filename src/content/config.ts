@@ -8,7 +8,7 @@ const insightCollection = defineCollection({
     title: z.string(),
     tags: z.array(z.string()).optional(),
     language: z.enum(["pl", "en"]),
-    date: z.date(),
+    date: z.string().datetime(),
     relatedInsights: z.array(reference('insightCollection')).optional(),
   }),
 });

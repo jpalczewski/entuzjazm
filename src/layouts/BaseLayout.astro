@@ -2,12 +2,11 @@
 import '../styles/global.css';
 import { getLangFromUrl } from '../i18n/utils';
 import Navigation from '@components/Navigation.astro';
-import LanguagePicker from '@components/LanguagePicker.astro';
 import Footer from '@components/Footer.astro';
 const {pageTitle} = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
-<html lang={lang}>
+<html lang={lang} data-theme="inba">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
