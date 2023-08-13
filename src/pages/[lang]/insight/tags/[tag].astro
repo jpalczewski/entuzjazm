@@ -1,6 +1,8 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import InsightCard from "@components/InsightCard.astro";
+import { getLangFromUrl } from "src/i18n/utils";
 
 export async function getStaticPaths() {
   const insights = await getCollection("insight");
@@ -22,11 +24,21 @@ export async function getStaticPaths() {
 
   return ret;
 }
+interface Props {
+  posts: CollectionEntry<'insight'>[] | undefined;
+  lang: string; 
+}
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-console.log(posts);
+const lang = getLangFromUrl(Astro.url);
+
 ---
 
 <BaseLayout>
   Insights tagged with {tag}:
+  {
+    posts.map(post => ( 
+      <InsightCard insight={post} lang={lang} />
+    ))
+  }
 </BaseLayout>
