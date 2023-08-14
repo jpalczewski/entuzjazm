@@ -1,22 +1,14 @@
 ---
-title: "Example tech blog"
+title: "Multiple types and languages in astro"
 language: en
-date: "2023-08-08T12:23:43Z"
+date: "2023-08-15T12:23:43Z"
 tags: 
- - linux
- - windows
+ - astro
+ - typescript
+ - entuzjazm
+
+relatedInsights:
+- 'en/post-1'
 ---
 
-Here is my _great_ post!
-
-```js
-
-<BaseLayout>
-  Insights tagged with {tag}:
-  {
-    posts.map(post => ( 
-      <InsightCard insight={post} lang={lang} />
-    ))
-  }
-</BaseLayout>
-```
+As mentioned in related insight, backend of this blog is written in [astro](fixme.pl)

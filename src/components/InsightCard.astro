@@ -1,7 +1,8 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import createSlug from 'src/lib/createSlug';
 import TagList from './TagList.astro';
+import RelatedInsight from './RelatedInsight.astro';
+import type { CollectionEntry } from 'astro:content';
 interface Props {
   insight: CollectionEntry<'insight'>;
   lang: string; 
@@ -25,4 +26,6 @@ const date = new Date(insight.data.date);
   </header>
 
   <Content />
+
+  <RelatedInsight  insight={insight}/>
 </article>

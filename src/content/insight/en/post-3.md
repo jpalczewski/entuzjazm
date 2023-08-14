@@ -1,7 +1,7 @@
 ---
 title: "Example asm"
 language: en
-date: "2023-08-08T17:23:43Z"
+date: "2023-08-17T17:23:43Z"
 tags: 
  - linux
  - asm
