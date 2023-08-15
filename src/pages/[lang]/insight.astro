@@ -7,17 +7,18 @@ import { getCollection } from 'astro:content';
 import InsightCard from "@components/InsightCard.astro";
 const lang = getLangFromUrl(Astro.url);
 const blogEntries = await getCollection('insight', ({data}) => { return data.language == lang});
+
+
 export function getStaticPaths() {
   return [
     {params: {lang: 'pl'}},
     {params: {lang: 'en'}},
   ];
 }
-console.log(blogEntries);
 ---
 <BaseLayout pageTitle={pageTitle}>
 
-    {blogEntries.sort((a,b) => {
+    {blogEntries.sort(() => {
         //const dateA =  parseInt(a.data.date)
         //const dateB = parseInt(b.data.date)
         //return dateA - dateB;

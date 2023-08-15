@@ -10,6 +10,8 @@ const insightCollection = defineCollection({
     language: z.enum(["pl", "en"]),
     date: z.string().datetime(),
     relatedInsights: z.array(reference('insight')).optional(),
+    referencedUrls: z.array(
+    z.object({ description: z.string(), url: z.string().url()})).optional(),
   }),
 });
 

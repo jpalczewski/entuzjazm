@@ -3,6 +3,7 @@ import createSlug from 'src/lib/createSlug';
 import TagList from './TagList.astro';
 import RelatedInsight from './RelatedInsight.astro';
 import type { CollectionEntry } from 'astro:content';
+import ReferencedUrls from './ReferencedUrls.astro';
 interface Props {
   insight: CollectionEntry<'insight'>;
   lang: string; 
@@ -11,6 +12,8 @@ const { insight , lang} = Astro.props;
 const { Content } = await insight.render();
 const dateLang = lang === "en"? "en-GB": lang;
 const date = new Date(insight.data.date);
+
+const hrFlag = (insight?.data.relatedInsights != undefined) || (insight?.data.referencedUrls != undefined);
 ---
 <article class="bg-secondary container px-4 mb-4 prose mx-auto w-full">
   <header class="mb-4 lg:mb-6">
@@ -26,6 +29,7 @@ const date = new Date(insight.data.date);
   </header>
 
   <Content />
-
+   { hrFlag && <hr /> }
   <RelatedInsight  insight={insight}/>
+  <ReferencedUrls insight={insight} />
 </article>

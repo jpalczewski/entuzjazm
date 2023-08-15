@@ -14,14 +14,14 @@ const lang = getLangFromUrl(Astro.url);
 ---
 { renderFlag && 
     <div class="bg-primary text-primary-content mx-auto">
-        Related insights:
+        <h4 class="text-primary-content font-normal">Related insights:</h4>
         <ul>
             {
                 insight.data.relatedInsights?.map( async insight => {
                     const relatedEntry = await getEntry(insight);
                     return (
                         <li>
-                            <a class="link text-primary-content no-underline" href={`/${lang}/insight/${createSlug( relatedEntry.data.title)}`}>    
+                            <a class="link text-primary-content no-underline font-normal hover:underline" href={`/${lang}/insight/${createSlug( relatedEntry.data.title)}`}>    
                             {relatedEntry.data.title}
                             </a></li>
                     )
