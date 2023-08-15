@@ -1,0 +1,27 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import createSlug from "../../../../../lib/createSlug";
+import BaseLayout from '@layouts/BaseLayout.astro';
+import InsightCard from '@components/InsightCard.astro';
+import { getLangFromUrl } from 'src/i18n/utils';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('insight')
+  const paths = pages.map(page => {
+    const date = new Date(page.data.date)
+    return { params: { slug: createSlug(page.data.title), lang: page.data.language, year: date.getFullYear(), month:(date.getMonth() + 1).toString().padStart(2, "0") }, props: page }
+  })
+  return paths;
+}
+
+interface Props {
+  requestedInsight: CollectionEntry<'insight'>;
+  lang: string; 
+}
+
+const lang = getLangFromUrl(Astro.url);
+const requestedInsight = Astro.props;
+---
+<BaseLayout pageTitle={requestedInsight.data.title}>
+  <InsightCard insight={requestedInsight} lang={lang}  />
+</BaseLayout>

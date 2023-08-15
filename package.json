@@ -1,0 +1,50 @@
+{
+  "name": "entuzjazm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "jpalczewski",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/prefetch": "^0.3.0",
+    "@astrojs/sitemap": "^2.0.1",
+    "@astrojs/svelte": "^3.1.0",
+    "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/ts-plugin": "^1.1.1",
+    "astro": "^2.10.3",
+    "astro-robots-txt": "^0.5.0",
+    "svelte": "^4.0.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "search.exclude": {
+    "pnpm-lock.yaml": true
+  },
+  "eslint.packageManager": "pnpm",
+  "npm.packageManager": "pnpm",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "daisyui": "^3.5.1",
+    "eslint": "^8.46.0",
+    "eslint-plugin-astro": "^0.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "prettier": "^3.0.1",
+    "prettier-plugin-astro": "^0.11.0",
+    "typescript": "^5.1.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

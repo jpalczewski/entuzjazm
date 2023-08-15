@@ -1,0 +1,9 @@
+---
+import { languages } from '../i18n/ui';
+---
+
+  {Object.entries(languages).map(([lang, label]) => (
+    <p>
+      <a class="link" href={`/${lang}/`}>{label}</a>
+    </p>
+  ))}

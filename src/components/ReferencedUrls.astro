@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getLangFromUrl } from 'src/i18n/utils';
+
+interface Props {
+    insight: CollectionEntry<'insight'> | undefined;
+}
+
+const {insight} = Astro.props;
+const renderFlag = insight?.data.referencedUrls != undefined;
+
+const lang = getLangFromUrl(Astro.url);
+---
+{ renderFlag && 
+    <div class=" mx-auto">
+        <h4 class="font-normal">Addresses referenced in this insight:</h4>
+        <ul>
+            {
+                insight.data.referencedUrls?.map (  element => {
+                    return (
+                        <li>
+                            <a class="link no-underline hover:underline font-normal" href={element.url}>    
+                            {element.description}
+                            </a></li>
+                    )
+                })
+            }
+
+
+        </ul>
+    </div>
+}

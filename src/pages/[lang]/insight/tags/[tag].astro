@@ -1,0 +1,48 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import InsightCard from "@components/InsightCard.astro";
+import { getLangFromUrl } from "src/i18n/utils";
+
+export async function getStaticPaths() {
+  const insights = await getCollection("insight");
+  const ret = insights.flatMap((post) => {
+    const lang = post.data.language;
+    const uniqueTags = Array.from(new Set(post.data.tags || []));
+
+    return uniqueTags.map((tag) => {
+      const filteredPosts = insights.filter(
+        (p) => p.data.language === lang && p.data.tags?.includes(tag),
+      );
+
+      return {
+        params: { tag: tag, lang: lang },
+        props: { posts: filteredPosts },
+      };
+    });
+  });
+
+  return ret;
+}
+interface Props {
+  posts: CollectionEntry<'insight'>[] | undefined;
+  lang: string; 
+}
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+---
+
+<BaseLayout>
+  <div class="grid justify-center">
+  <div class="mx-auto w-full container">
+    <h2 class="text-lg">Insights tagged with <span class="font-mono">#{tag}</span>:</h2>
+  </div>
+  {
+    posts?.map(post => ( 
+      <InsightCard insight={post} lang={lang} />
+    ))
+  }
+  </div>
+</BaseLayout>

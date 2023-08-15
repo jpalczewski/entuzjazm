@@ -1,0 +1,36 @@
+---
+import createSlug from 'src/lib/createSlug';
+import TagList from './TagList.astro';
+import RelatedInsight from './RelatedInsight.astro';
+import type { CollectionEntry } from 'astro:content';
+import ReferencedUrls from './ReferencedUrls.astro';
+import createInsightUrl from 'src/lib/createInsightUrl';
+interface Props {
+  insight: CollectionEntry<'insight'>;
+  lang: string; 
+}
+const { insight , lang} = Astro.props;
+const { Content } = await insight.render();
+const dateLang = lang === "en"? "en-GB": lang;
+const date = new Date(insight.data.date);
+
+const hrFlag = (insight?.data.relatedInsights != undefined) || (insight?.data.referencedUrls != undefined);
+---
+<article class="bg-secondary container px-4 mb-4 prose mx-auto w-full">
+  <header class="mb-4 lg:mb-6">
+    <h1 class="mb-0 pb-0 mt-1 pt-4">
+      <a class="no-underline" href={createInsightUrl(insight)}>{insight.data.title}</a>
+    </h1>
+    <p class="mt-0 italic mb-0 pb-0">
+    Published: <time datetime={date.toISOString()}>
+      {date.toLocaleTimeString(dateLang)} {date.toLocaleDateString(dateLang)}
+    </time>
+   </p>
+    <TagList tags={insight.data.tags} />
+  </header>
+
+  <Content />
+   { hrFlag && <hr /> }
+  <RelatedInsight  insight={insight}/>
+  <ReferencedUrls insight={insight} />
+</article>
