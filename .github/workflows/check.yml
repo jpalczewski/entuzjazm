@@ -9,6 +9,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+      
       - name: Build environment
         uses: ./.github/actions/build-astro
 
