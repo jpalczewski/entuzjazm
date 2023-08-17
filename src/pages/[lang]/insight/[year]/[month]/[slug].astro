@@ -16,11 +16,10 @@ export async function getStaticPaths() {
 
 interface Props {
   requestedInsight: CollectionEntry<'insight'>;
-  lang: string; 
 }
 
 const lang = getLangFromUrl(Astro.url);
-const requestedInsight = Astro.props;
+const {requestedInsight} = Astro.props;
 ---
 <BaseLayout pageTitle={requestedInsight.data.title}>
   <InsightCard insight={requestedInsight} lang={lang}  />
