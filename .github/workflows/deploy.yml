@@ -3,8 +3,8 @@ name: Deploy to GitHub Pages
 on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
-  #push:
-  #  branches: [ master ]
+  push:
+    branches: [ master ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
   
@@ -30,3 +30,13 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
+
+      - uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        with:
+          source-directory: 'dist'
+          destination-github-username: 'jpalczewski'
+          destination-repository-name: 'jpalczewski.github.io'
+          user-email: actions@github.com
+          target-branch: master
