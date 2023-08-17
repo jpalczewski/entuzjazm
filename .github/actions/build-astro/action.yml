@@ -6,12 +6,16 @@ runs:
   steps:
     - name: Checkout your repository using git
       uses: actions/checkout@v3
+      shell: bash
 
     - uses: pnpm/action-setup@v2
       with:
         version: latest
+      shell: bash
     - uses: actions/setup-node@v3
       with:
         node-version: '20'
         cache: 'pnpm'
+      shell: bash
     - run: pnpm install
+      shell: bash
