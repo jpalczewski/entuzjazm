@@ -15,20 +15,18 @@ permissions:
   id-token: write
 
 jobs:
+  check:
+    uses: ./.github/workflows/check.yml
   build:
     runs-on: ubuntu-latest
+    needs: check
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+      
+      - name: Build environment
+        uses: ./.github/actions/build-astro
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: latest
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-      - run: pnpm install
       - run: pnpm build
 
       - uses: cpina/github-action-push-to-another-repository@main
