@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "jpalczewski",
@@ -39,9 +40,11 @@
     "eslint": "^8.46.0",
     "eslint-plugin-astro": "^0.28.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
+    "husky": "^8.0.0",
     "prettier": "^3.0.1",
     "prettier-plugin-astro": "^0.11.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9"
   },
   "config": {
     "commitizen": {
