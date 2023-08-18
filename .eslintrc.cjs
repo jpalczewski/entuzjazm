@@ -47,5 +47,6 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-    }
+    },
+    "ignorePatterns":  ["src/env.d.ts"]
 }

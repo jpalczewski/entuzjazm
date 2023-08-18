@@ -11,7 +11,7 @@ const lang = getLangFromUrl(Astro.url);
 
 {
     tags?.map(tag => (
-        <a class="no-underline px-1 font-normal font-mono" href={`/${lang}/insight/tags/${tag}`}>#{tag}</p>
+        <a class="no-underline px-1 font-normal font-mono" href={`/${lang}/insight/tags/${tag}`}>#{tag}</a>
     ))
 }
 </div>
