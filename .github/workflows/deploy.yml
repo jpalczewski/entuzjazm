@@ -4,10 +4,10 @@ on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [ master ]
+    branches: [master]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
-  
+
 # Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
@@ -15,28 +15,29 @@ permissions:
   id-token: write
 
 jobs:
+  check:
+    uses: ./.github/workflows/check.yml
   build:
     runs-on: ubuntu-latest
+    needs: check
+    environment:
+      name: github-pages
+      url: "https://jpalczewski.github.io"
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: latest
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-      - run: pnpm install
+      - name: Build environment
+        uses: ./.github/actions/build-astro
+
       - run: pnpm build
 
       - uses: cpina/github-action-push-to-another-repository@main
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
-          source-directory: 'dist'
-          destination-github-username: 'jpalczewski'
-          destination-repository-name: 'jpalczewski.github.io'
+          source-directory: "dist"
+          destination-github-username: "jpalczewski"
+          destination-repository-name: "jpalczewski.github.io"
           user-email: actions@github.com
           target-branch: master

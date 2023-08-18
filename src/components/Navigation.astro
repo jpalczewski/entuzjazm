@@ -1,24 +1,24 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import '../styles/global.css'
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import "../styles/global.css";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
+
 <nav class="navbar bg-base-100">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl"
-    href={`/${lang}/insight/`} >jpalczewski blog</a>
+    <a class="btn btn-ghost normal-case text-xl" href={`/${lang}/insight/`}
+      >jpalczewski blog</a
+    >
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
       <li class="tooltip tooltip-left" data-tip="Short, random posts.">
-          <a href={`/${lang}/insight/`} >
-            {t('nav.insight')}
-          </a>
+        <a href={`/${lang}/insight/`}>
+          {t("nav.insight")}
+        </a>
       </li>
     </ul>
-</div>
+  </div>
 </nav>
-
-
