@@ -1,7 +1,6 @@
 ---
 import { getEntry, type CollectionEntry } from "astro:content";
-import { getLangFromUrl } from "src/i18n/utils";
-import createSlug from "src/lib/createSlug";
+import createInsightUrl from "src/lib/createInsightUrl";
 
 interface Props {
   insight: CollectionEntry<"insight"> | undefined;
@@ -9,8 +8,6 @@ interface Props {
 
 const { insight } = Astro.props;
 const renderFlag = insight?.data.relatedInsights != undefined;
-
-const lang = getLangFromUrl(Astro.url);
 ---
 
 {
@@ -24,7 +21,7 @@ const lang = getLangFromUrl(Astro.url);
             <li>
               <a
                 class="link text-primary-content no-underline font-normal hover:underline"
-                href={`/${lang}/insight/${createSlug(relatedEntry.data.title)}`}
+                href={createInsightUrl(relatedEntry)}
               >
                 {relatedEntry.data.title}
               </a>
