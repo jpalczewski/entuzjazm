@@ -16,7 +16,7 @@ export async function getStaticPaths() {
         year: date.getFullYear(),
         month: (date.getMonth() + 1).toString().padStart(2, "0"),
       },
-      props: page,
+      props: { requestedInsight: page },
     };
   });
   return paths;
