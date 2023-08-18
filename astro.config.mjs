@@ -9,5 +9,5 @@ import robotsTxt from "astro-robots-txt";
 // https://astro.build/config
 export default defineConfig({
   integrations: [sitemap(), prefetch(), tailwind(), svelte(), robotsTxt()],
-  site: "https://jpalczewski.github.io"
+  site: "https://jpalczewski.github.io",
 });

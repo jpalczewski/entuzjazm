@@ -1,34 +1,31 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getLangFromUrl } from "src/i18n/utils";
-const pageTitle = 'Insights';
+const pageTitle = "Insights";
 
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import InsightCard from "@components/InsightCard.astro";
 const lang = getLangFromUrl(Astro.url);
-const blogEntries = await getCollection('insight', ({data}) => { return data.language == lang});
-
+const blogEntries = await getCollection("insight", ({ data }) => {
+  return data.language == lang;
+});
 
 export function getStaticPaths() {
-  return [
-    {params: {lang: 'pl'}},
-    {params: {lang: 'en'}},
-  ];
+  return [{ params: { lang: "pl" } }, { params: { lang: "en" } }];
 }
 ---
-<BaseLayout pageTitle={pageTitle}>
 
-    {blogEntries.sort(() => {
+<BaseLayout pageTitle={pageTitle}>
+  {
+    blogEntries
+      .sort(() => {
         //const dateA =  parseInt(a.data.date)
         //const dateB = parseInt(b.data.date)
         //return dateA - dateB;
         return -1;
-        } 
-      )
-      .map(blogPostEntry => (
-       <InsightCard insight={blogPostEntry} lang={lang} />  
-      )
-    )
-    }
-
+      })
+      .map((blogPostEntry) => (
+        <InsightCard insight={blogPostEntry} lang={lang} />
+      ))
+  }
 </BaseLayout>

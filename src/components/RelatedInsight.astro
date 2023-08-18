@@ -1,34 +1,37 @@
 ---
-import { getEntry, type CollectionEntry } from 'astro:content';
-import { getLangFromUrl } from 'src/i18n/utils';
-import createSlug from 'src/lib/createSlug';
+import { getEntry, type CollectionEntry } from "astro:content";
+import { getLangFromUrl } from "src/i18n/utils";
+import createSlug from "src/lib/createSlug";
 
 interface Props {
-    insight: CollectionEntry<'insight'> | undefined;
+  insight: CollectionEntry<"insight"> | undefined;
 }
 
-const {insight} = Astro.props;
+const { insight } = Astro.props;
 const renderFlag = insight?.data.relatedInsights != undefined;
 
 const lang = getLangFromUrl(Astro.url);
 ---
-{ renderFlag && 
+
+{
+  renderFlag && (
     <div class="bg-primary text-primary-content mx-auto">
-        <h4 class="text-primary-content font-normal">Related insights:</h4>
-        <ul>
-            {
-                insight.data.relatedInsights?.map( async insight => {
-                    const relatedEntry = await getEntry(insight);
-                    return (
-                        <li>
-                            <a class="link text-primary-content no-underline font-normal hover:underline" href={`/${lang}/insight/${createSlug( relatedEntry.data.title)}`}>    
-                            {relatedEntry.data.title}
-                            </a></li>
-                    )
-                })
-            }
-
-
-        </ul>
+      <h4 class="text-primary-content font-normal">Related insights:</h4>
+      <ul>
+        {insight.data.relatedInsights?.map(async (insight) => {
+          const relatedEntry = await getEntry(insight);
+          return (
+            <li>
+              <a
+                class="link text-primary-content no-underline font-normal hover:underline"
+                href={`/${lang}/insight/${createSlug(relatedEntry.data.title)}`}
+              >
+                {relatedEntry.data.title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </div>
+  )
 }

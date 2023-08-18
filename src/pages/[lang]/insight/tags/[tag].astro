@@ -25,24 +25,21 @@ export async function getStaticPaths() {
   return ret;
 }
 interface Props {
-  posts: CollectionEntry<'insight'>[] | undefined;
-  lang: string; 
+  posts: CollectionEntry<"insight">[] | undefined;
+  lang: string;
 }
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-
 ---
 
 <BaseLayout>
   <div class="grid justify-center">
-  <div class="mx-auto w-full container">
-    <h2 class="text-lg">Insights tagged with <span class="font-mono">#{tag}</span>:</h2>
-  </div>
-  {
-    posts?.map(post => ( 
-      <InsightCard insight={post} lang={lang} />
-    ))
-  }
+    <div class="mx-auto w-full container">
+      <h2 class="text-lg">
+        Insights tagged with <span class="font-mono">#{tag}</span>:
+      </h2>
+    </div>
+    {posts?.map((post) => <InsightCard insight={post} lang={lang} />)}
   </div>
 </BaseLayout>

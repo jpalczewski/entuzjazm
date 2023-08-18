@@ -1,7 +1,7 @@
 name: Run checks
 
-on: [ push]
- 
+on: [push]
+
 permissions:
   contents: read
 
@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
-      
+
       - name: Build environment
         uses: ./.github/actions/build-astro
 

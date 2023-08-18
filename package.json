@@ -56,6 +56,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts, cjs}": ["pnpm lint", "prettier --write"]
+    "*.{js,ts, cjs, astro, md}": [
+      "pnpm lint",
+      "prettier --write"
+    ]
   }
 }
