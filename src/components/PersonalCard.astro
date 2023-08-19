@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import TagList from "./TagList.astro";
 import { convertLangToLocaleLang } from "./../i18n/utils";
+import { createPersonalUrl } from "src/lib/createUrls";
 interface Props {
   personalEntry: CollectionEntry<"personal">;
 }
@@ -15,7 +16,9 @@ const dateLang = convertLangToLocaleLang(personalEntry.data.language);
 <article class="bg-secondary container px-4 mb-4 prose mx-auto w-full">
   <header class="mb-4 lg:mb-6">
     <h1 class="mb-0 pb-0 mt-1 pt-4">
-      <a class="no-underline" href="test">{personalEntry.data.title}</a>
+      <a class="no-underline" href={createPersonalUrl(personalEntry)}
+        >{personalEntry.data.title}</a
+      >
     </h1>
     <p class="mt-0 italic mb-0 pb-0">
       Published: <time datetime={personalEntry.data.date.toISOString()}>

@@ -3,14 +3,15 @@ import TagList from "./TagList.astro";
 import RelatedInsight from "./RelatedInsight.astro";
 import type { CollectionEntry } from "astro:content";
 import ReferencedUrls from "./ReferencedUrls.astro";
-import createInsightUrl from "src/lib/createInsightUrl";
+import { createInsightUrl } from "src/lib/createUrls";
+import { convertLangToLocaleLang } from "src/i18n/utils";
 interface Props {
   insight: CollectionEntry<"insight">;
   lang: string;
 }
-const { insight, lang } = Astro.props;
+const { insight } = Astro.props;
 const { Content } = await insight.render();
-const dateLang = lang === "en" ? "en-GB" : lang;
+const dateLang = convertLangToLocaleLang(insight.data.language);
 const date = new Date(insight.data.date);
 
 const hrFlag =

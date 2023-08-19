@@ -1,6 +1,6 @@
 ---
 import { getEntry, type CollectionEntry } from "astro:content";
-import createInsightUrl from "src/lib/createInsightUrl";
+import { createInsightUrl } from "src/lib/createUrls";
 
 interface Props {
   insight: CollectionEntry<"insight"> | undefined;
