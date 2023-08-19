@@ -1,0 +1,27 @@
+---
+import PersonalCard from "@components/PersonalCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { getLangFromUrl } from "src/i18n/utils";
+
+const pageTitle = "Personal entries";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "pl" } }, { params: { lang: "en" } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const personalEntries = await getCollection("personal", ({ data }) => {
+  return data.language == lang;
+});
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  {
+    personalEntries
+      .sort(() => {
+        return -1;
+      })
+      .map((personalEntry) => <PersonalCard personalEntry={personalEntry} />)
+  }
+</BaseLayout>
