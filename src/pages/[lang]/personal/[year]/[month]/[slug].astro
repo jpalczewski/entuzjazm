@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import createSlug from "../../../../../lib/createSlug";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import PersonalCard from "@components/PersonalCard.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("personal");
@@ -29,5 +30,5 @@ console.log(personal);
 ---
 
 <BaseLayout pageTitle={personal.data.title}>
-  {personal.data.date.toLocaleDateString()}
+  <PersonalCard personalEntry={personal} />
 </BaseLayout>
