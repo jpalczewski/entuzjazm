@@ -1,3 +1,9 @@
+## [2.1.2](https://github.com/jpalczewski/entuzjazm/compare/2.1.1...2.1.2) (2023-08-20)
+
+### Bug Fixes
+
+- set proper timezone and enable timezones in schema ([1eda4f8](https://github.com/jpalczewski/entuzjazm/commit/1eda4f83530ca38d71bd37e36817d795571e3e26))
+
 ## [2.1.1](https://github.com/jpalczewski/entuzjazm/compare/2.1.0...2.1.1) (2023-08-20)
 
 ### Features
