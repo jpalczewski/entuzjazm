@@ -1,6 +1,6 @@
 {
   "name": "entuzjazm",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "prepare": "husky install",
-    "lint": "eslint --quiet --fix"
+    "lint": "eslint --quiet --fix",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "keywords": [],
   "author": "jpalczewski",
