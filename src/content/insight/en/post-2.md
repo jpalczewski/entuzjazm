@@ -1,7 +1,7 @@
 ---
 title: "Multiple post types and languages in astro"
 language: en
-date: "2023-08-15T12:23:43Z"
+date: "2023-08-15T12:23:43-02:00"
 tags:
   - astro
   - typescript

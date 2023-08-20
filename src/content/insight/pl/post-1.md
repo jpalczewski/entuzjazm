@@ -1,7 +1,7 @@
 ---
 title: "Witaj, astro!"
 language: pl
-date: "2023-08-08T12:23:43Z"
+date: "2023-08-08T12:23:43-02:00"
 ---
 
 Ze względu na to że pisanie mi zaczęło sprawiać mnóstwo frajdy[^1] - wracam ponownie do blogowania.[^2]

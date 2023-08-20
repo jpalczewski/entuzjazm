@@ -1,7 +1,7 @@
 ---
 title: "Hello, astro!"
 language: en
-date: "2023-08-14T12:35:00Z"
+date: "2023-08-14T12:35:00-02:00"
 ---
 
 New blogging engine, new beginning. Isn't it? This time with hand-made[^1] scheme[^2].

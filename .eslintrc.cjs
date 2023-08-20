@@ -40,6 +40,9 @@ module.exports = {
       files: ["*.md"],
       parser: "eslint-plugin-markdownlint/parser",
       extends: ["plugin:markdownlint/recommended"],
+      rules: {
+        "markdownlint/md013": "off",
+      },
     },
   ],
   parser: "@typescript-eslint/parser",
