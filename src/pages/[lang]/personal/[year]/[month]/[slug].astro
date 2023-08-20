@@ -1,0 +1,34 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import createSlug from "../../../../../lib/createSlug";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import PersonalCard from "@components/PersonalCard.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("personal");
+  const paths = pages.map((page) => {
+    return {
+      params: {
+        slug: createSlug(page.data.title),
+        lang: page.data.language,
+        year: page.data.date.getFullYear(),
+        month: (page.data.date.getMonth() + 1).toString().padStart(2, "0"),
+      },
+      props: { personal: page },
+    };
+  });
+  console.log(paths);
+  return paths;
+}
+
+interface Props {
+  personal: CollectionEntry<"personal">;
+}
+
+const { personal } = Astro.props;
+console.log(personal);
+---
+
+<BaseLayout pageTitle={personal.data.title}>
+  <PersonalCard personalEntry={personal} />
+</BaseLayout>

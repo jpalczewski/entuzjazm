@@ -10,6 +10,7 @@ export const ui = {
     "nav.home": "Home",
     "nav.twitter": "Twitter",
     "nav.insight": "Insights",
+    "nav.personal": "Personal",
   },
   pl: {
     "nav.home": "Accueil",

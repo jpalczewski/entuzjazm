@@ -11,3 +11,7 @@ export function useTranslations(lang: keyof typeof ui) {
     return ui[lang][key] || ui[defaultLang][key];
   };
 }
+
+export function convertLangToLocaleLang(lang: keyof typeof ui) {
+  return lang === "en" ? "en-GB" : lang;
+}

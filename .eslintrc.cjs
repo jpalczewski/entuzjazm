@@ -36,6 +36,11 @@ module.exports = {
         // "astro/no-set-html-directive": "error"
       },
     },
+    {
+      files: ["*.md"],
+      parser: "eslint-plugin-markdownlint/parser",
+      extends: ["plugin:markdownlint/recommended"],
+    },
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {

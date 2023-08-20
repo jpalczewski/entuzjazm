@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from "astro:content";
+import TagList from "./TagList.astro";
+import { convertLangToLocaleLang } from "./../i18n/utils";
+import { createPersonalUrl } from "src/lib/createUrls";
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import ReferencedUrls from "./ReferencedUrls.astro";
+interface Props {
+  personalEntry: CollectionEntry<"personal">;
+}
+
+const { personalEntry } = Astro.props;
+const { Content } = await personalEntry.render();
+
+const dateLang = convertLangToLocaleLang(personalEntry.data.language);
+
+const hrFlag = personalEntry?.data.referencedUrls != undefined;
+---
+
+<article class="bg-secondary container px-4 mb-4 prose mx-auto w-full">
+  <header class="mb-4 lg:mb-6">
+    <h1 class="mb-0 pb-0 mt-1 pt-4">
+      <a class="no-underline" href={createPersonalUrl(personalEntry)}
+        >{personalEntry.data.title}</a
+      >
+    </h1>
+    <p class="mt-0 italic mb-0 pb-0">
+      Published: <time datetime={personalEntry.data.date.toISOString()}>
+        {personalEntry.data.date.toLocaleTimeString(dateLang)}
+        {personalEntry.data.date.toLocaleDateString(dateLang)}
+      </time>
+    </p>
+    <TagList tags={personalEntry.data.tags} />
+  </header>
+
+  <Content />
+
+  {
+    personalEntry.data.youtubeVideoId && (
+      <div class="pv-1 mv-1">
+        <YouTube id={personalEntry.data.youtubeVideoId} />
+      </div>
+    )
+  }
+  {hrFlag && <hr />}
+  <ReferencedUrls entry={personalEntry} />
+</article>
