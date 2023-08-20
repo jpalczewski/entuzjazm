@@ -2,19 +2,24 @@
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  insight: CollectionEntry<"insight"> | undefined;
+  entry: CollectionEntry<"insight"> | CollectionEntry<"personal"> | undefined;
 }
 
-const { insight } = Astro.props;
-const renderFlag = insight?.data.referencedUrls != undefined;
+const { entry } = Astro.props;
+const renderFlag = entry?.data.referencedUrls != undefined;
+
+const descriptionText =
+  entry?.data.urlsDescription != undefined
+    ? entry?.data.urlsDescription
+    : "Addresses referenced in this insight";
 ---
 
 {
   renderFlag && (
     <div class=" mx-auto">
-      <h4 class="font-normal">Addresses referenced in this insight:</h4>
+      <h4 class="font-normal">{descriptionText}:</h4>
       <ul>
-        {insight.data.referencedUrls?.map((element) => {
+        {entry.data.referencedUrls?.map((element) => {
           return (
             <li>
               <a

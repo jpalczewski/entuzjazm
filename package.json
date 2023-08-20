@@ -17,6 +17,7 @@
   "type": "module",
   "license": "ISC",
   "dependencies": {
+    "@astro-community/astro-embed-youtube": "^0.4.0",
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/sitemap": "^2.0.1",
     "@astrojs/svelte": "^3.1.0",

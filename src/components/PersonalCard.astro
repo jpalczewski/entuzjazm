@@ -3,6 +3,8 @@ import type { CollectionEntry } from "astro:content";
 import TagList from "./TagList.astro";
 import { convertLangToLocaleLang } from "./../i18n/utils";
 import { createPersonalUrl } from "src/lib/createUrls";
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import ReferencedUrls from "./ReferencedUrls.astro";
 interface Props {
   personalEntry: CollectionEntry<"personal">;
 }
@@ -11,6 +13,8 @@ const { personalEntry } = Astro.props;
 const { Content } = await personalEntry.render();
 
 const dateLang = convertLangToLocaleLang(personalEntry.data.language);
+
+const hrFlag = personalEntry?.data.referencedUrls != undefined;
 ---
 
 <article class="bg-secondary container px-4 mb-4 prose mx-auto w-full">
@@ -30,4 +34,14 @@ const dateLang = convertLangToLocaleLang(personalEntry.data.language);
   </header>
 
   <Content />
+
+  {
+    personalEntry.data.youtubeVideoId && (
+      <div class="pv-1 mv-1">
+        <YouTube id={personalEntry.data.youtubeVideoId} />
+      </div>
+    )
+  }
+  {hrFlag && <hr />}
+  <ReferencedUrls entry={personalEntry} />
 </article>
