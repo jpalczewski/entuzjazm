@@ -19,14 +19,14 @@
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.4.0",
     "@astrojs/prefetch": "^0.3.0",
-    "@astrojs/sitemap": "^2.0.1",
-    "@astrojs/svelte": "^3.1.0",
+    "@astrojs/sitemap": "^2.0.2",
+    "@astrojs/svelte": "^3.1.1",
     "@astrojs/tailwind": "^4.0.0",
     "@astrojs/ts-plugin": "^1.1.1",
-    "astro": "^2.10.3",
+    "astro": "^2.10.12",
     "astro-robots-txt": "^0.5.0",
-    "svelte": "^4.0.0",
-    "tailwindcss": "^3.0.24"
+    "svelte": "^4.2.0",
+    "tailwindcss": "^3.3.3"
   },
   "search.exclude": {
     "pnpm-lock.yaml": true
@@ -35,20 +35,20 @@
   "npm.packageManager": "pnpm",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
     "cz-conventional-changelog": "^3.3.0",
     "daisyui": "^3.5.1",
-    "eslint": "^8.46.0",
+    "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-astro": "^0.28.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-markdownlint": "^0.5.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^14.0.0",
-    "prettier": "^3.0.1",
-    "prettier-plugin-astro": "^0.11.0",
+    "prettier": "^3.0.2",
+    "prettier-plugin-astro": "^0.11.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.9"
   },
