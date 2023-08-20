@@ -1,7 +1,7 @@
 ---
 title: "Implication of deploying github page to another repo"
 language: en
-date: "2023-08-17T11:39:43Z"
+date: "2023-08-17T11:39:43-02:00"
 tags:
   - astro
   - github

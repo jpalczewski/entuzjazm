@@ -7,7 +7,7 @@ const metadataSchema = {
   language: languageType,
   date: z
     .string()
-    .datetime()
+    .datetime({ offset: true })
     .transform((date) => new Date(date)),
   referencedUrls: z
     .array(z.object({ description: z.string(), url: z.string().url() }))
