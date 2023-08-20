@@ -1,0 +1,17 @@
+---
+const forceRender = import.meta.env.FORCE_UMAMI;
+
+const render = forceRender || import.meta.env.PROD;
+---
+
+{
+  render && (
+    <script
+      async
+      is:inline
+      type="text/partytown"
+      src="https://analytics.umami.is/script.js"
+      data-website-id="65224a3b-c6d2-4d0e-90f2-85508d3c0a79"
+    />
+  )
+}
