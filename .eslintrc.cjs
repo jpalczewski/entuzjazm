@@ -48,5 +48,5 @@ module.exports = {
   },
   plugins: ["@typescript-eslint"],
   rules: {},
-  ignorePatterns: ["src/env.d.ts"],
+  ignorePatterns: ["src/env.d.ts", "CHANGELOG.md"],
 };
