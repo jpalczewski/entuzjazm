@@ -1,3 +1,9 @@
+## [2.1.3](https://github.com/jpalczewski/entuzjazm/compare/2.1.2...2.1.3) (2023-08-21)
+
+### Features
+
+- **personal:** add tags feature ([7cc3c88](https://github.com/jpalczewski/entuzjazm/commit/7cc3c88edcd957e47f9c1da8d3d5189b5c973818)), closes [#28](https://github.com/jpalczewski/entuzjazm/issues/28)
+
 ## [2.1.2](https://github.com/jpalczewski/entuzjazm/compare/2.1.1...2.1.2) (2023-08-20)
 
 ### Bug Fixes
