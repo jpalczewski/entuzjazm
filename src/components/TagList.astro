@@ -1,10 +1,12 @@
 ---
 import { getLangFromUrl } from "src/i18n/utils";
+import type { contentType } from "../lib/contentType";
 interface Props {
   tags: string[] | undefined;
+  type: contentType;
 }
 
-const { tags } = Astro.props;
+const { tags, type } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -13,7 +15,7 @@ const lang = getLangFromUrl(Astro.url);
     tags?.map((tag) => (
       <a
         class="no-underline px-1 font-normal font-mono"
-        href={`/${lang}/insight/tags/${tag}`}
+        href={`/${lang}/${type}/tags/${tag}`}
       >
         #{tag}
       </a>
