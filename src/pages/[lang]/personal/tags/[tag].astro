@@ -1,21 +1,20 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import PersonalCard from "@components/PersonalCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import InsightCard from "@components/InsightCard.astro";
-import { getLangFromUrl } from "src/i18n/utils";
+import type { CollectionEntry } from "astro:content";
 import getTagStaticPaths from "src/lib/getTagStaticPaths";
 
 export async function getStaticPaths() {
-  const paths = getTagStaticPaths("insight");
+  const paths = getTagStaticPaths("personal");
   return paths;
 }
+
 interface Props {
-  posts: CollectionEntry<"insight">[] | undefined;
-  lang: string;
+  posts: CollectionEntry<"personal">[] | undefined;
 }
+
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
 ---
 
 <BaseLayout>
@@ -25,6 +24,6 @@ const lang = getLangFromUrl(Astro.url);
         Insights tagged with <span class="font-mono">#{tag}</span>:
       </h2>
     </div>
-    {posts?.map((post) => <InsightCard insight={post} lang={lang} />)}
+    {posts?.map((post) => <PersonalCard personalEntry={post} />)}
   </div>
 </BaseLayout>
