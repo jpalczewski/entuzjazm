@@ -9,6 +9,14 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap(), prefetch(), tailwind(), svelte(), robotsTxt(), partytown()],
+  integrations: [sitemap({
+    i18n: {
+      defaultLocale: "en", 
+      locales: {
+        en: "en-GB",
+        pl: "pl-PL"
+      }
+    }
+  }), prefetch(), tailwind(), svelte(), robotsTxt(), partytown()],
   site: "https://jpalczewski.github.io"
 });
