@@ -12,11 +12,13 @@ export const ui = {
     "nav.insight": "Insights",
     "nav.personal": "Personal",
     "nav.about-me": "About me",
+    "nav.projects": "Projects",
   },
   pl: {
     "nav.home": "Accueil",
     "nav.insight": "Notatki",
     "nav.about-me": "O mnie",
     "nav.personal": "Osobiste",
+    "nav.projects": "Projekty",
   },
 } as const;

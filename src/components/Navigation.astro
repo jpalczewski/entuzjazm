@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import "../styles/global.css";
+import NavbarElement from "./NavbarElement.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -14,23 +15,28 @@ const t = useTranslations(lang);
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li class="tooltip tooltip-left" data-tip="Short, random posts.">
-        <a href={`/${lang}/insight/`}>
-          {t("nav.insight")}
-        </a>
-      </li>
-      <li
-        class="tooltip tooltip-left"
-        data-tip="Personal thoughts or experiences."
-      >
-        <a href={`/${lang}/personal/`}>
-          {t("nav.personal")}
-        </a>
-      </li>
-      <li class="tooltip tooltip-left" data-tip="About this site author.">
-        <a href={`/${lang}/about-me/`}>
-          {t("nav.about-me")}
-        </a>
+      <NavbarElement
+        linkDestination={`/${lang}/about-me/`}
+        text={t("nav.about-me")}
+      />
+      <NavbarElement
+        linkDestination={`/${lang}/projects/`}
+        text={t("nav.projects")}
+      />
+      <li class="pr-2">
+        <details>
+          <summary> Posts</summary>
+          <ul class="p-2 bg-base-100">
+            <NavbarElement
+              linkDestination={`/${lang}/insight/`}
+              text={t("nav.insight")}
+            />
+            <NavbarElement
+              linkDestination={`/${lang}/personal/`}
+              text={t("nav.personal")}
+            />
+          </ul>
+        </details>
       </li>
     </ul>
   </div>
