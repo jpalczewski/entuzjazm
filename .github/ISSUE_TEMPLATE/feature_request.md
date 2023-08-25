@@ -2,8 +2,9 @@
 name: Feature request
 about: Suggest an idea for this project
 title: "[feat] "
-labels: ""
+labels: "\U0001F4DC enhancement, \U0001F4AF priority: needs triage"
 assignees: jpalczewski
+
 ---
 
 <!--- Provide a general summary of the issue in the Title above -->

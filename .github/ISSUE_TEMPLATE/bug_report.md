@@ -1,9 +1,10 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ""
-labels: ""
-assignees: ""
+title: "[bug] "
+labels: "\U0001F41B bug, \U0001F4AF priority: needs triage"
+assignees: jpalczewski
+
 ---
 
 **Describe the bug**
