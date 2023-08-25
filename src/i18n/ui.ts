@@ -11,9 +11,12 @@ export const ui = {
     "nav.twitter": "Twitter",
     "nav.insight": "Insights",
     "nav.personal": "Personal",
+    "nav.about-me": "About me",
   },
   pl: {
     "nav.home": "Accueil",
-    "nav.about": "Notatki",
+    "nav.insight": "Notatki",
+    "nav.about-me": "O mnie",
+    "nav.personal": "Osobiste",
   },
 } as const;
