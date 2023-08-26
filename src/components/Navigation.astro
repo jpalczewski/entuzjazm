@@ -1,9 +1,8 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import "../styles/global.css";
-import Hamburger from "./Hamburger.astro";
 import NavbarElement from "./NavbarElement.astro";
-
+import MobileMenu from "./MobileMenu.svelte";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -44,7 +43,7 @@ const t = useTranslations(lang);
   </div>
   <div class="visible md:hidden">
     <div>
-      <Hamburger />
+      <MobileMenu client:only="svelte" />
     </div>
   </div>
 </nav>

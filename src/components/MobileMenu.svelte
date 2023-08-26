@@ -1,8 +1,11 @@
----
+<script>
+    let visible = false;
+    function toggleMenu() {
+      visible = !visible;
 
----
-
-<div class="btn btn-ghost normal-case text-xl">
+    }
+</script>
+<div class="btn btn-ghost normal-case text-xl m-1" on:click={toggleMenu} >
   <svg
     xmlns="http://www.w3.org/2000/svg"
     class="w-6 h-6"
@@ -17,3 +20,10 @@
       d="M4 6h16M4 12h16M4 18h16"></path>
   </svg>
 </div>
+{#if visible}
+<div id="menu" >
+  <ul class="menu menu-vertical px-1">
+    Huj
+  </ul>
+</div>
+{/if}
