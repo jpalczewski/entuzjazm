@@ -23,7 +23,7 @@
 {#if visible}
 <div id="menu" >
   <ul class="menu menu-vertical px-1">
-    Huj
+    <slot />
   </ul>
 </div>
 {/if}

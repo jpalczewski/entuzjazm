@@ -1,0 +1,40 @@
+---
+import { getLangFromUrl, useTranslations } from "src/i18n/utils";
+import NavbarElement from "./NavbarElement.astro";
+type menuType = "menu-horizontal" | "menu-vertical";
+
+interface Props {
+  type: menuType;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { type } = Astro.props;
+---
+
+<ul class:list={["menu", "px-1", type]}>
+  <NavbarElement
+    linkDestination={`/${lang}/about-me/`}
+    text={t("nav.about-me")}
+  />
+  <NavbarElement
+    linkDestination={`/${lang}/projects/`}
+    text={t("nav.projects")}
+  />
+  <li class="pr-2">
+    <details>
+      <summary> Posts</summary>
+      <ul class="p-2 bg-base-100">
+        <NavbarElement
+          linkDestination={`/${lang}/insight/`}
+          text={t("nav.insight")}
+        />
+        <NavbarElement
+          linkDestination={`/${lang}/personal/`}
+          text={t("nav.personal")}
+        />
+      </ul>
+    </details>
+  </li>
+</ul>

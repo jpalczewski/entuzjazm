@@ -1,10 +1,9 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl } from "../i18n/utils";
 import "../styles/global.css";
-import NavbarElement from "./NavbarElement.astro";
 import MobileMenu from "./MobileMenu.svelte";
+import NavbarItems from "./NavbarItems.astro";
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <nav class="navbar bg-base-100">
@@ -15,35 +14,13 @@ const t = useTranslations(lang);
   </div>
 
   <div class="invisible md:visible flex-none">
-    <ul class="menu menu-horizontal px-1">
-      <NavbarElement
-        linkDestination={`/${lang}/about-me/`}
-        text={t("nav.about-me")}
-      />
-      <NavbarElement
-        linkDestination={`/${lang}/projects/`}
-        text={t("nav.projects")}
-      />
-      <li class="pr-2">
-        <details>
-          <summary> Posts</summary>
-          <ul class="p-2 bg-base-100">
-            <NavbarElement
-              linkDestination={`/${lang}/insight/`}
-              text={t("nav.insight")}
-            />
-            <NavbarElement
-              linkDestination={`/${lang}/personal/`}
-              text={t("nav.personal")}
-            />
-          </ul>
-        </details>
-      </li>
-    </ul>
+    <NavbarItems type="menu-horizontal" />
   </div>
   <div class="visible md:hidden">
     <div>
-      <MobileMenu client:only="svelte" />
+      <MobileMenu client:only="svelte">
+        <NavbarItems type="menu-vertical" />
+      </MobileMenu>
     </div>
   </div>
 </nav>
