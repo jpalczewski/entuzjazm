@@ -1,9 +1,9 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl } from "../i18n/utils";
 import "../styles/global.css";
-
+import MobileMenu from "./MobileMenu.svelte";
+import NavbarItems from "./NavbarItems.astro";
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <nav class="navbar bg-base-100">
@@ -12,21 +12,15 @@ const t = useTranslations(lang);
       >jpalczewski blog</a
     >
   </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal px-1">
-      <li class="tooltip tooltip-left" data-tip="Short, random posts.">
-        <a href={`/${lang}/insight/`}>
-          {t("nav.insight")}
-        </a>
-      </li>
-      <li
-        class="tooltip tooltip-left"
-        data-tip="Personal thoughts or experiences."
-      >
-        <a href={`/${lang}/personal/`}>
-          {t("nav.personal")}
-        </a>
-      </li>
-    </ul>
+
+  <div class="invisible md:visible flex-none">
+    <NavbarItems type="menu-horizontal" />
+  </div>
+  <div class="visible md:hidden">
+    <div>
+      <MobileMenu client:only="svelte">
+        <NavbarItems type="menu-vertical" />
+      </MobileMenu>
+    </div>
   </div>
 </nav>
