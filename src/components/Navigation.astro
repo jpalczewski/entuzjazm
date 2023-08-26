@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import "../styles/global.css";
+import Hamburger from "./Hamburger.astro";
 import NavbarElement from "./NavbarElement.astro";
 
 const lang = getLangFromUrl(Astro.url);
@@ -14,23 +15,7 @@ const t = useTranslations(lang);
     >
   </div>
 
-  <div class="btn btn-ghost normal-case text-xl visible md:invisible">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-6 h-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-  </div>
-
-  <div class="flex-none invisible md:visible">
+  <div class="invisible md:visible flex-none">
     <ul class="menu menu-horizontal px-1">
       <NavbarElement
         linkDestination={`/${lang}/about-me/`}
@@ -56,5 +41,10 @@ const t = useTranslations(lang);
         </details>
       </li>
     </ul>
+  </div>
+  <div class="visible md:hidden">
+    <div>
+      <Hamburger />
+    </div>
   </div>
 </nav>
