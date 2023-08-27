@@ -1,3 +1,19 @@
+## [2.1.4](https://github.com/jpalczewski/entuzjazm/compare/2.1.3...2.1.4) (2023-08-27)
+
+### Bug Fixes
+
+- update sitemap ([d2b7bc3](https://github.com/jpalczewski/entuzjazm/commit/d2b7bc3a28d41e927dd012362bff0a42f244310e))
+
+### Features
+
+- **about:** add about me pages and links ([dbc14cc](https://github.com/jpalczewski/entuzjazm/commit/dbc14cc2383a0f3100bd5edbdc02d2f2c1f2481a))
+- add a new post and fix css issue ([6e3a117](https://github.com/jpalczewski/entuzjazm/commit/6e3a117339aa5ce65f18d2d142a372b609842c08))
+- add new pages drafts ([ee54e9b](https://github.com/jpalczewski/entuzjazm/commit/ee54e9b2b5cf71670f7c196282a71c5cc95e5f4e))
+- finish mobile menu ([2ced4b0](https://github.com/jpalczewski/entuzjazm/commit/2ced4b0c2799f556d102468ad65f2aa044500810))
+- mobile navbar draft ([db40be7](https://github.com/jpalczewski/entuzjazm/commit/db40be7bbd0a371dfc4e946948af2ffaa0c8f2c7))
+- navbar mobile toggle ([77a23ad](https://github.com/jpalczewski/entuzjazm/commit/77a23ad8ed4c57cbd308306f27a220993042be16))
+- **navbar:** implement mobile hamburger and classical menu ([96e0579](https://github.com/jpalczewski/entuzjazm/commit/96e057997bd3b8c0c227960e220b8c7fc23cd0b9)), closes [#40](https://github.com/jpalczewski/entuzjazm/issues/40) [#34](https://github.com/jpalczewski/entuzjazm/issues/34)
+
 ## [2.1.3](https://github.com/jpalczewski/entuzjazm/compare/2.1.2...2.1.3) (2023-08-21)
 
 ### Features
