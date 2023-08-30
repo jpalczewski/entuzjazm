@@ -42,6 +42,7 @@ module.exports = {
       extends: ["plugin:markdownlint/recommended"],
       rules: {
         "markdownlint/md013": "off",
+        "markdownlint/md009": "off",
       },
     },
   ],
