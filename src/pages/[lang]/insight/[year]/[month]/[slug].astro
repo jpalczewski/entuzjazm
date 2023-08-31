@@ -31,5 +31,7 @@ const { requestedInsight } = Astro.props;
 ---
 
 <BaseLayout pageTitle={requestedInsight.data.title}>
-  <InsightCard insight={requestedInsight} lang={lang} />
+  <main transition:animate="fade">
+    <InsightCard insight={requestedInsight} lang={lang} />
+  </main>
 </BaseLayout>

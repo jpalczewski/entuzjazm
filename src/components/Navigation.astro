@@ -6,7 +6,7 @@ import NavbarItems from "./NavbarItems.astro";
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<nav class="navbar bg-base-100">
+<nav class="navbar bg-base-100" transition:persist>
   <div class="flex-1">
     <a class="btn btn-ghost normal-case text-xl" href={`/${lang}/insight/`}
       >jpalczewski blog</a

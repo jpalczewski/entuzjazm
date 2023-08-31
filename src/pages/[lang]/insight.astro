@@ -16,16 +16,18 @@ export function getStaticPaths() {
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  {
-    blogEntries
-      .sort(() => {
-        //const dateA =  parseInt(a.data.date)
-        //const dateB = parseInt(b.data.date)
-        //return dateA - dateB;
-        return -1;
-      })
-      .map((blogPostEntry) => (
-        <InsightCard insight={blogPostEntry} lang={lang} />
-      ))
-  }
+  <main transition:animate="slide">
+    {
+      blogEntries
+        .sort(() => {
+          //const dateA =  parseInt(a.data.date)
+          //const dateB = parseInt(b.data.date)
+          //return dateA - dateB;
+          return -1;
+        })
+        .map((blogPostEntry) => (
+          <InsightCard insight={blogPostEntry} lang={lang} />
+        ))
+    }
+  </main>
 </BaseLayout>

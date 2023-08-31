@@ -13,7 +13,7 @@ const t = useTranslations(lang);
 const { type } = Astro.props;
 ---
 
-<ul class:list={["menu", "px-1", type]}>
+<ul class:list={["menu", "z-10", "px-1", type]}>
   <NavbarElement
     linkDestination={`/${lang}/about-me/`}
     text={t("nav.about-me")}

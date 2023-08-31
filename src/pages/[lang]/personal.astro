@@ -17,11 +17,13 @@ const personalEntries = await getCollection("personal", ({ data }) => {
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  {
-    personalEntries
-      .sort(() => {
-        return -1;
-      })
-      .map((personalEntry) => <PersonalCard personalEntry={personalEntry} />)
-  }
+  <main transition:animate="slide">
+    {
+      personalEntries
+        .sort(() => {
+          return -1;
+        })
+        .map((personalEntry) => <PersonalCard personalEntry={personalEntry} />)
+    }
+  </main>
 </BaseLayout>
