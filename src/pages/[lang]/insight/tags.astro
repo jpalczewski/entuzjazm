@@ -28,13 +28,15 @@ const lang = getLangFromUrl(Astro.url);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div>
-    {
-      tags.map((tag: string) => (
-        <p>
-          <a href={`/${lang}/insight/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
-  </div>
+  <main transition:animate="slide">
+    <div>
+      {
+        tags.map((tag: string) => (
+          <p>
+            <a href={`/${lang}/insight/tags/${tag}`}>{tag}</a>
+          </p>
+        ))
+      }
+    </div>
+  </main>
 </BaseLayout>

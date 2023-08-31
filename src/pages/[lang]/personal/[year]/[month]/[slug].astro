@@ -30,5 +30,7 @@ console.log(personal);
 ---
 
 <BaseLayout pageTitle={personal.data.title}>
-  <PersonalCard personalEntry={personal} />
+  <main transition:animate="fade">
+    <PersonalCard personalEntry={personal} />
+  </main>
 </BaseLayout>

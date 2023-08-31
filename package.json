@@ -20,7 +20,7 @@
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.4.1",
     "@astrojs/check": "^0.2.0",
-    "@astrojs/partytown": "^1.2.3",
+    "@astrojs/partytown": "^2.0.0",
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/sitemap": "^2.0.2",
     "@astrojs/svelte": "^4.0.0",
