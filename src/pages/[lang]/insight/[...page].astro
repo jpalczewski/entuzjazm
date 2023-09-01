@@ -23,16 +23,12 @@ export async function getStaticPaths({
         return data.language == lang;
       });
       const sortedEntries = entries.reverse();
-      const val = paginate(sortedEntries, {
+      return paginate(sortedEntries, {
         params: { lang: lang },
         pageSize: 5,
       });
-
-      return val;
     }),
   );
-
-  console.dir(ret.flat());
   return ret.flat();
 }
 interface Props {
