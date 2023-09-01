@@ -6,27 +6,40 @@ const pageTitle = "Insights";
 
 import { getCollection, type CollectionEntry } from "astro:content";
 import InsightCard from "@components/InsightCard.astro";
-import type { PaginateFunction } from "astro";
+import type { Page, PaginateFunction } from "astro";
+import Pagination from "@components/Pagination.astro";
 const lang = getLangFromUrl(Astro.url);
 
-
-export async function getStaticPaths({ paginate } : {paginate: PaginateFunction}) {
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction;
+}) {
   const languageKeys = Object.keys(languages);
-  
-  const ret =  await Promise.all( languageKeys.map(async (lang) => {
+
+  const ret = await Promise.all(
+    languageKeys.map(async (lang) => {
       const entries = await getCollection("insight", ({ data }) => {
         return data.language == lang;
       });
-      const sortedEntries = entries.reverse();  
-      const val = paginate(sortedEntries, { params: {lang: lang}, pageSize: 5});
+      const sortedEntries = entries.reverse();
+      const val = paginate(sortedEntries, {
+        params: { lang: lang },
+        pageSize: 5,
+      });
 
       return val;
-    }));
+    }),
+  );
 
-    console.dir(ret.flat());
-    return ret .flat();
+  console.dir(ret.flat());
+  return ret.flat();
 }
-const {page} = Astro.props;
+interface Props {
+  page: Page<CollectionEntry<"insight">>;
+}
+
+const { page } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -39,9 +52,11 @@ const {page} = Astro.props;
           //return dateA - dateB;
           return -1;
         })
-        .map((blogPostEntry:CollectionEntry<"insight">) => (
+        .map((blogPostEntry: CollectionEntry<"insight">) => (
           <InsightCard insight={blogPostEntry} lang={lang} />
         ))
     }
+
+    <Pagination page={page} />
   </main>
 </BaseLayout>

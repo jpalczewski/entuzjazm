@@ -1,0 +1,30 @@
+---
+import type { Page } from "astro";
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+---
+
+<div class="flex justify-center py-2 my-2">
+  <div class="join">
+    {
+      page.url.prev ? (
+        <a class="join-item btn" href={page.url.prev}>
+          «
+        </a>
+      ) : null
+    }
+    <button class="join-item btn">Page {page.currentPage}</button>
+    {
+      page.url.next ? (
+        <a class="join-item btn" href={page.url.next}>
+          »
+        </a>
+      ) : null
+    }
+  </div>
+</div>
+
