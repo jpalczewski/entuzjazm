@@ -42,13 +42,7 @@ const { page } = Astro.props;
   <main transition:animate="slide">
     {
       page.data
-        .sort(() => {
-          //const dateA =  parseInt(a.data.date)
-          //const dateB = parseInt(b.data.date)
-          //return dateA - dateB;
-          return -1;
-        })
-        .map((blogPostEntry: CollectionEntry<"insight">) => (
+        .map((blogPostEntry) => (
           <InsightCard insight={blogPostEntry} lang={lang} />
         ))
     }
