@@ -4,9 +4,5 @@
     "astro", // Enable .astro
     "typescript" // Enable .ts
   ],
-<<<<<<< HEAD
-  "typescript.tsdk": "node_modules/typescript/lib"
-=======
   "typescript.tsdk": "node_modules/typescript/lib",
->>>>>>> d5212a8 (chore: specify vscode ts location)
 }
