@@ -1,5 +1,6 @@
 ---
-title: "How to improve zotero experience?"
+title: "How to improve Zotero experience?"
+description: "Short review of useful Zotero plugins."
 language: en
 date: "2023-08-29T00:13:17-02:00"
 tags:
@@ -18,7 +19,7 @@ referencedUrls:
     url: "https://beepb00p.xyz/annotating.html"
 ---
 
-I have a need to share how much I love [zotero](https://www.zotero.org/). It was a tool that was a significant part of my academic journey and I had fallen in love while I was writing my B.Sc. thesis[^1], and all coexisting add-ons were indirectly responsible for about 50 references mentioned. I've recently also incorporated Zotero into my workflow alongside another side-project on Notion.
+I have a need to share how much I love [Zotero](https://www.zotero.org/). It was a tool that was a significant part of my academic journey and I had fallen in love while I was writing my B.Sc. thesis[^1], and all coexisting add-ons were indirectly responsible for about 50 references mentioned. I've recently also incorporated Zotero into my workflow alongside another side-project on Notion.
 
 Other remarkable features that Zotero offers:
 

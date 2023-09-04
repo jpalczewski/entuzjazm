@@ -1,3 +1,9 @@
+## [2.2.1](https://github.com/jpalczewski/entuzjazm/compare/2.2.0...2.2.1) (2023-09-04)
+
+### Features
+
+- **insight:** add seo support ([f73d238](https://github.com/jpalczewski/entuzjazm/commit/f73d2388504d1fe927c268c9d86890977ec6456e))
+
 # 2.2.0 (2023-09-04)
 
 ### Bug Fixes

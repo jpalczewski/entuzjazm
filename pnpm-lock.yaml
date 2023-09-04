@@ -38,6 +38,9 @@ dependencies:
   astro-robots-txt:
     specifier: ^0.5.0
     version: 0.5.0
+  astro-seo:
+    specifier: ^0.8.0
+    version: 0.8.0
   svelte:
     specifier: ^4.2.0
     version: 4.2.0
@@ -1717,6 +1720,10 @@ packages:
     dependencies:
       valid-filename: 4.0.0
       zod: 3.22.2
+    dev: false
+
+  /astro-seo@0.8.0:
+    resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
   /astro@3.0.7:

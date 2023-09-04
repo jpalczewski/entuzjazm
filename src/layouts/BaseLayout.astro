@@ -28,7 +28,9 @@ const url = canonicalUrl.href;
       content="eCj5eDvSvCQbudfe1BSUFP9TO89cePOHtUOMJ2l408k"
     />
     <ViewTransitions />
-    <title>{pageTitle}</title>
+    <slot name="head">
+      <title>{pageTitle}</title>
+    </slot>
   </head>
   <body>
     <Navigation />
