@@ -4,5 +4,5 @@
     "astro", // Enable .astro
     "typescript" // Enable .ts
   ],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
 }
