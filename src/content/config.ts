@@ -3,6 +3,7 @@ import { z, defineCollection, reference } from "astro:content";
 const languageType = z.enum(["pl", "en"]);
 const metadataSchema = {
   title: z.string(),
+  description: z.string().optional(),
   tags: z.array(z.string()).optional(),
   language: languageType,
   date: z

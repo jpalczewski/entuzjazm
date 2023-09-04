@@ -4,6 +4,7 @@ import createSlug from "../../../../../lib/createSlug";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import InsightCard from "@components/InsightCard.astro";
 import { getLangFromUrl } from "src/i18n/utils";
+import { SEO } from "astro-seo";
 
 export async function getStaticPaths() {
   const pages = await getCollection("insight");
@@ -31,6 +32,44 @@ const { requestedInsight } = Astro.props;
 ---
 
 <BaseLayout pageTitle={requestedInsight.data.title}>
+  <SEO
+    title={requestedInsight.data.title}
+    titleTemplate="%s - jpalczewski blog"
+    slot="head"
+    twitter={{
+      creator: "@JacekPalczewski",
+    }}
+    openGraph={{
+      basic: {
+        title: requestedInsight.data.title,
+        type: "article",
+        image: "/android-chrome-512x512.png",
+      },
+      article: {
+        tags: requestedInsight.data.tags ?? [],
+        publishedTime: requestedInsight.data.date.toISOString(),
+        authors: ["Jacek Palczewski"],
+      },
+    }}
+  />
+  {
+    requestedInsight.data.tags && (
+      <meta
+        name="tags"
+        content={requestedInsight.data.tags.join(",")}
+        slot="head"
+      />
+    )
+  }
+  {
+    requestedInsight.data.description && (
+      <meta
+        name="description"
+        content={requestedInsight.data.description}
+        slot="head"
+      />
+    )
+  }
   <main transition:animate="fade">
     <InsightCard insight={requestedInsight} lang={lang} />
   </main>
