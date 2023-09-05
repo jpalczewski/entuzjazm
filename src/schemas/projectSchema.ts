@@ -19,7 +19,7 @@ const projectSchema = z.object({
   name: translatedStringType,
   description: translatedStringType,
   link: z.string(),
-
+  tags: z.array(z.string()),
   startDate: dateType,
   endDate: dateType.optional(),
 });
