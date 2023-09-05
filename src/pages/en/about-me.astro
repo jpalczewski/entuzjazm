@@ -1,15 +1,14 @@
 ---
+import Panel from "@components/Panel.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 const pageTitle = "About me";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <main transition:animate="slide" class="-z-10">
-    <article>
-      <div class="py-5 pl-2">
-        Hi. Usually my writing creativity strikes in times that don't overlap
-        with coding time, so suppose that you are reading a lorem ipsum text.
-      </div>
-    </article>
+    <Panel>
+      Hi. Usually my writing creativity strikes in times that don't overlap with
+      coding time, so suppose that you are reading a lorem ipsum text.
+    </Panel>
   </main>
 </BaseLayout>

@@ -1,4 +1,5 @@
 ---
+import Panel from "@components/Panel.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { getLangFromUrl } from "src/i18n/utils";
@@ -29,14 +30,16 @@ const lang = getLangFromUrl(Astro.url);
 
 <BaseLayout pageTitle={pageTitle}>
   <main transition:animate="slide">
-    <div>
-      {
-        tags.map((tag: string) => (
-          <p>
-            <a href={`/${lang}/insight/tags/${tag}`}>{tag}</a>
-          </p>
-        ))
-      }
-    </div>
+    <Panel>
+      <div>
+        {
+          tags.map((tag: string) => (
+            <p>
+              <a href={`/${lang}/insight/tags/${tag}`}>{tag}</a>
+            </p>
+          ))
+        }
+      </div>
+    </Panel>
   </main>
 </BaseLayout>
