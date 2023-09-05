@@ -1,0 +1,13 @@
+type: project
+name:
+  - language: pl
+    string: entuzjazm
+  - language: en
+    string: entuzjazm
+description:
+  - language: pl
+    string: Projekt bloga na którym właśnie jesteś.
+  - language: en
+    string: Project behind site you are reading right now.
+link: https://github.com/jpalczewski/entuzjazm
+startDate:  "2023-08-08T12:23:43-02:00"

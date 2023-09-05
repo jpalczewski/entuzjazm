@@ -3,7 +3,16 @@ import { languageType } from "./languageType";
 import { dateType } from "./dateType";
 
 const projectTypes = z.enum(["project", "certificate"]);
-const translatedStringType = z.map(languageType, z.string());
+const translatedStringType = z
+  .array(
+    z.object({
+      language: languageType,
+      string: z.string(),
+    }),
+  )
+  .transform((item) =>
+    Object.assign({}, ...item.map((el) => ({ [el.language]: el.string }))),
+  );
 
 const projectSchema = z.object({
   type: projectTypes,
@@ -12,7 +21,7 @@ const projectSchema = z.object({
   link: z.string(),
 
   startDate: dateType,
-  endDate: dateType,
+  endDate: dateType.optional(),
 });
 
 export default projectSchema;
