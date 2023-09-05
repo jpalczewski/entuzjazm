@@ -20,6 +20,7 @@ const insightCollection = defineCollection({
   schema: z.object({
     ...metadataSchema,
     relatedInsights: z.array(reference("insight")).optional(),
+    relatedProjects: z.array(reference("project")).optional(),
   }),
 });
 
