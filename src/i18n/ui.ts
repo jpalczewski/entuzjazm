@@ -3,6 +3,9 @@ export const languages = {
   pl: "Polski",
 };
 
+export const languageKeys = Object.keys(languages) as Array<
+  keyof typeof languages
+>;
 export const defaultLang = "en";
 
 export const ui = {
