@@ -5,6 +5,7 @@ import { convertLangToLocaleLang } from "./../i18n/utils";
 import { createPersonalUrl } from "src/lib/createUrls";
 import { YouTube } from "@astro-community/astro-embed-youtube";
 import ReferencedUrls from "./ReferencedUrls.astro";
+import Panel from "./Panel.astro";
 interface Props {
   personalEntry: CollectionEntry<"personal">;
 }
@@ -17,7 +18,7 @@ const dateLang = convertLangToLocaleLang(personalEntry.data.language);
 const hrFlag = personalEntry?.data.referencedUrls != undefined;
 ---
 
-<article class="bg-secondary container px-4 mb-4 prose mx-auto w-full">
+<Panel>
   <header class="mb-4 lg:mb-6">
     <h1 class="mb-0 pb-0 mt-1 pt-4">
       <a class="no-underline" href={createPersonalUrl(personalEntry)}
@@ -45,4 +46,4 @@ const hrFlag = personalEntry?.data.referencedUrls != undefined;
   }
   {hrFlag && <hr />}
   <ReferencedUrls entry={personalEntry} />
-</article>
+</Panel>
