@@ -4,9 +4,12 @@ export async function GET() {
   const projects = await getCollection("project");
   return new Response(
     JSON.stringify(
-      projects.map((entry: CollectionEntry<"project">) => ({
-        [entry.id]: entry.data,
-      })),
+      Object.assign(
+        {},
+        ...projects.map((entry: CollectionEntry<"project">) => ({
+          [entry.id]: entry.data,
+        })),
+      ),
     ),
   );
 }

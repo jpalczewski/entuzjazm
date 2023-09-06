@@ -1,0 +1,22 @@
+---
+import Panel from "@components/Panel.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProjectList from "@components/ProjectList.svelte";
+import { languages } from "src/i18n/ui";
+const pageTitle = "Projects";
+
+export async function getStaticPaths() {
+  const languageKeys = Object.keys(languages);
+  return languageKeys.map((lang) => ({ params: { lang: lang } }));
+}
+
+const { lang } = Astro.params;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <main transition:animate="slide">
+    <Panel>
+      <ProjectList lang={lang} client:load />
+    </Panel>
+  </main>
+</BaseLayout>
