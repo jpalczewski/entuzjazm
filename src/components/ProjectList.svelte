@@ -1,6 +1,7 @@
 <script lang="ts">
   import projectSchema from "src/schemas/projectSchema";
   import type { z } from "astro:content";
+    import ProjectTagList from "./ProjectTagList.svelte";
 
   export let lang: string;
   type projectType = z.infer<typeof projectSchema>;
@@ -14,7 +15,7 @@
 </script>
 
 {#await fetchProjects()}
-  lolading...
+<span class="loading loading-spinner loading-lg"></span>
 {:then projects}
   <div class="overflow-x-auto">
     <table class="table table-zebra">
@@ -33,7 +34,7 @@
           <tr>
             <th>{index + 1}</th>
             <td>{project.name[lang]}</td>
-            <td>{project.tags.join(" ")}</td>
+            <td><ProjectTagList tags={project.tags} /></td>
             <td>{new Date(project.startDate).getFullYear()}</td>
             <td><button class="btn">Details</button></td>
           </tr>

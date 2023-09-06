@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl } from "src/i18n/utils";
 import type { contentType } from "../lib/contentType";
+import "../styles/tag.css";
 interface Props {
   tags: string[] | undefined;
   type: contentType;
@@ -13,10 +14,7 @@ const lang = getLangFromUrl(Astro.url);
 <div class="mt-0 pt-0">
   {
     tags?.map((tag) => (
-      <a
-        class="no-underline px-1 font-normal font-mono"
-        href={`/${lang}/${type}/tags/${tag}`}
-      >
+      <a class="tag" href={`/${lang}/${type}/tags/${tag}`}>
         #{tag}
       </a>
     ))
