@@ -17,6 +17,8 @@ export default defineConfig({
         pl: "pl-PL"
       }
     }
-  }), prefetch(), tailwind(), svelte(), robotsTxt(), partytown()],
+  }), prefetch({
+    intentSelector: ["a[href^='/en']", "a[href^='/pl']"]
+  }), tailwind(), svelte(), robotsTxt(), partytown()],
   site: "https://jpalczewski.github.io"
 });
