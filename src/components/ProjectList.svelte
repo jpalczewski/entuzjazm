@@ -10,6 +10,7 @@
   async function fetchProjects() {
     const projectsFetched = await fetch("/api/projects.json");
     const projects: projectResponse = await projectsFetched.json();
+    console.log( Object.entries(projects));
     return projects;
   }
 </script>
@@ -30,16 +31,31 @@
         </tr>
       </thead>
       <tbody>
-        {#each Object.entries(projects) as [_slug, project], index}
+        {#each Object.entries(projects) as entry, index}
           <tr>
             <th>{index + 1}</th>
-            <td>{project.name[lang]}</td>
-            <td><ProjectTagList tags={project.tags} /></td>
-            <td>{new Date(project.startDate).getFullYear()}</td>
-            <td><button class="btn">Details</button></td>
+            <td>{entry[1].name[lang]}</td>
+            <td><ProjectTagList tags={entry[1].tags} /></td>
+            <td>{new Date(entry[1].startDate).getFullYear()}</td>
+            <td>{@html "<button class='btn' onclick='"+ entry[0] + "_modal.showModal()' >Details</button>"}</td>
           </tr>
         {/each}
       </tbody>
     </table>
+
+    {#each Object.entries(projects) as entry}
+    <dialog id="{entry[0]}_modal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-lg"> {entry[1].name[lang]}</h3>
+        <p class="py-4">{entry[1].description[lang]}</p>
+
+        <a href="{entry[1].link}" data-astro-reload>Link</a>
+        <p class="py-4">Press ESC key or click outside to close</p>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+  {/each}
   </div>
 {/await}
