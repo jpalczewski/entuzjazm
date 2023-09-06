@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .tag {
+      @apply no-underline px-1 font-normal font-mono;
+    }
+  }

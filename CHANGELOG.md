@@ -1,3 +1,19 @@
+# [2.3.0](https://github.com/jpalczewski/entuzjazm/compare/2.2.1...2.3.0) (2023-09-06)
+
+### Bug Fixes
+
+- **project:** add url to related insights ([bec9715](https://github.com/jpalczewski/entuzjazm/commit/bec97159ebecf33ad8aeaf376d5491007f03990a)), closes [#64](https://github.com/jpalczewski/entuzjazm/issues/64)
+
+### Features
+
+- **project:** add dialog ([0de53cd](https://github.com/jpalczewski/entuzjazm/commit/0de53cd05d1c69955efa359a239d3087d66bc206)), closes [#34](https://github.com/jpalczewski/entuzjazm/issues/34) [#63](https://github.com/jpalczewski/entuzjazm/issues/63)
+- **project:** add draft project table ([890b847](https://github.com/jpalczewski/entuzjazm/commit/890b8474f471605604c8b30b9d667f82449c23f2))
+- **project:** add projects schema ([1345bb8](https://github.com/jpalczewski/entuzjazm/commit/1345bb8c31cb952ca82abfb5c52f52fe1699c2fd)), closes [#49](https://github.com/jpalczewski/entuzjazm/issues/49)
+- **project:** add related insights ([88b1664](https://github.com/jpalczewski/entuzjazm/commit/88b16648fa48bf01f2f5f4cfa18bfbf0df30128f))
+- **project:** add tags ([9017367](https://github.com/jpalczewski/entuzjazm/commit/9017367f39f6e7f6168fbd0de6d2942e6be840f5)), closes [#49](https://github.com/jpalczewski/entuzjazm/issues/49) [#50](https://github.com/jpalczewski/entuzjazm/issues/50)
+- **project:** improve endpoint data format ([feca424](https://github.com/jpalczewski/entuzjazm/commit/feca424306f908cd7c785c89c1e51f188b6c3301)), closes [#49](https://github.com/jpalczewski/entuzjazm/issues/49) [#50](https://github.com/jpalczewski/entuzjazm/issues/50)
+- **project:** style tags in project tab ([0a3b8c4](https://github.com/jpalczewski/entuzjazm/commit/0a3b8c4df4a346b7ebbe995149d52aa6fce5548c))
+
 ## [2.2.1](https://github.com/jpalczewski/entuzjazm/compare/2.2.0...2.2.1) (2023-09-04)
 
 ### Features

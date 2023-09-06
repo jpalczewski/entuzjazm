@@ -13,6 +13,9 @@ relatedInsights:
 referencedUrls:
   - description: "Github repo with astro code"
     url: "https://github.com/jpalczewski/entuzjazm"
+
+relatedProjects:
+  - entuzjazm
 ---
 
 As mentioned in a related insight, the backend of this blog is written in [astro](https://astro.build/)[^1].

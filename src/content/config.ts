@@ -1,15 +1,14 @@
 import { z, defineCollection, reference } from "astro:content";
+import { languageType } from "../schemas/languageType";
+import projectSchema from "src/schemas/projectSchema";
+import { dateType } from "../schemas/dateType";
 
-const languageType = z.enum(["pl", "en"]);
 const metadataSchema = {
   title: z.string(),
   description: z.string().optional(),
   tags: z.array(z.string()).optional(),
   language: languageType,
-  date: z
-    .string()
-    .datetime({ offset: true })
-    .transform((date) => new Date(date)),
+  date: dateType,
   referencedUrls: z
     .array(z.object({ description: z.string(), url: z.string().url() }))
     .optional(),
@@ -21,6 +20,7 @@ const insightCollection = defineCollection({
   schema: z.object({
     ...metadataSchema,
     relatedInsights: z.array(reference("insight")).optional(),
+    relatedProjects: z.array(reference("project")).optional(),
   }),
 });
 
@@ -32,8 +32,14 @@ const personalCollection = defineCollection({
   }),
 });
 
+const projectCollection = defineCollection({
+  type: "data",
+  schema: projectSchema,
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
   insight: insightCollection,
   personal: personalCollection,
+  project: projectCollection,
 };
