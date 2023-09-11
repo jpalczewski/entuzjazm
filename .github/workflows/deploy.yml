@@ -25,7 +25,7 @@ jobs:
       url: "https://jpalczewski.github.io"
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Build environment
         uses: ./.github/actions/build-astro
