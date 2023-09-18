@@ -68,8 +68,8 @@ devDependencies:
     specifier: ^3.3.0
     version: 3.3.0
   daisyui:
-    specifier: ^3.7.1
-    version: 3.7.1
+    specifier: ^3.7.5
+    version: 3.7.5
   eslint:
     specifier: ^8.48.0
     version: 8.48.0
@@ -2429,8 +2429,8 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /daisyui@3.7.1:
-    resolution: {integrity: sha512-NKiXNcwbu17SmPPqQ/0+NYsG6jCmGvSw0hC1QiH44ofn9iMaXregd8/MVgT5+kd5XrPF6xM36Aig4EmdJ8Jcug==}
+  /daisyui@3.7.5:
+    resolution: {integrity: sha512-udhiBJYVvcPGXa+mL5IElke6EdddKecjbbz6m43+9IVqzK8GBwetg092Edclo42TkNboLD9nzodeesJygqZt2A==}
     engines: {node: '>=16.9.0'}
     dependencies:
       colord: 2.9.3
