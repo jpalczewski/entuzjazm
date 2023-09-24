@@ -3,7 +3,7 @@
   import type { z } from "astro:content";
     import ProjectTagList from "./ProjectTagList.svelte";
 
-  export let lang: string;
+  export let lang: string | undefined;
   type projectType = z.infer<typeof projectSchema>;
   type projectResponse = Record<string, projectType>;
 

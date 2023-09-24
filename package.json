@@ -53,6 +53,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-markdownlint": "^0.5.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-svelte": "^2.33.2",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
@@ -69,7 +70,7 @@
   },
   "lint-staged": {
     "*.{js,ts,cjs,astro,yml,md,svelte}": [
-      "pnpm lint",
+      "bun lint",
       "prettier --write"
     ]
   }

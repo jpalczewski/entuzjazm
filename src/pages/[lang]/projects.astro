@@ -10,6 +10,9 @@ export async function getStaticPaths() {
   return languageKeys.map((lang) => ({ params: { lang: lang } }));
 }
 
+interface Props {
+  lang: string;
+}
 const { lang } = Astro.params;
 ---
 
