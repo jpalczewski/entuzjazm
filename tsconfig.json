@@ -6,6 +6,7 @@
         "name": "@astrojs/ts-plugin"
       }
     ],
+    "types": ["bun-types"],
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
@@ -14,4 +15,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.astro"]
+  
 }
