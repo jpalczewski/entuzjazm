@@ -17,4 +17,5 @@ jobs:
       - name: Build environment
         uses: oven-sh/setup-bun@v1
 
+      - run: bun install
       - run: bun check
